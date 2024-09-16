@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend UI</title>
+</head>
+<body>
+    <h1>Connecting UI to Backend</h1>
+    <div id="response"></div>
+
+    <script>
+        // Make an API request to the backend
+        fetch('http://localhost:8080/api/message')
+            .then(response => response.text())
+            .then(data => {
+                // Display the response in the UI
+                document.getElementById('response').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>
